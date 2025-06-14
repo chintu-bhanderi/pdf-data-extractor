@@ -12,8 +12,11 @@ function App() {
     formData.append("file", file);
     setLoading(true);
 
+    const ProdURL = "https://pdf-extractor-api-b7r9.onrender.com/extract";
+    const LocalURL = "http://localhost:8000/extract";
+
     try {
-      const res = await fetch("http://localhost:8000/extract", {
+      const res = await fetch(ProdURL, {
         method: "POST",
         body: formData,
       });
